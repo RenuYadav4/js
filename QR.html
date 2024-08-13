@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>QR Code Example</h1>
+    <img id="qr-code">
+    <a href="" id="qr_link" onclick="test_QR()"  download >website</a>
+    
+    <script>
+        var qr = new QRious({
+            element: document.getElementById('qr-code'),
+            value: 'https://nxttour.in/sukoon',  // The URL or text to encode
+            size: 200,  // Size of the QR code (optional)
+            level: 'H'  // Error correction level (optional - 'L', 'M', 'Q', 'H')
+        });
+        function test_QR(){
+            var src = $('img').attr('src');
+            $('#qr_link').attr('href',src);
+        }
+
+    </script>
+</body>
+</html>
